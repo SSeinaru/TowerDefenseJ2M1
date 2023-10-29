@@ -32,14 +32,6 @@ public class Tower : MonoBehaviour
                 nearestDistance = distance;
             }
         }
-
-        //LookAtTarget();
-    }
-
-    void LookAtTarget()
-    {
-        Vector2 direction = target.position - transform.position;
-        transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
     }
 
     IEnumerator Shoot()

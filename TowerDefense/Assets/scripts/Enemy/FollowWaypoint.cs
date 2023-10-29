@@ -1,44 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime;
+using UnityEditor;
 using UnityEngine;
 
 public class FollowWaypoint : MonoBehaviour
 {
-    [SerializeField] private Path path;
-    [SerializeField] private float speed = 1;
+    [Header("references")] 
+    [SerializeField] private Rigidbody2D rb;
 
-    [SerializeField] private int nextWaypointIndex = 1;
-    [SerializeField] private float reachedWaypointClearance = 0.25f;
+    [Header("attributes")]
+    [SerializeField] private float Speed = 8f;
+    
+    private Transform target;
+
+    private int pathIndex = 0;
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = path.waypoints[0].position;
+        target = GameManager.main.waypoints[pathIndex];
     }
 
     // Update is called once per frame
     void Update()
     {
-        MoveTowards();
-
-        if (Vector3.Distance(transform.position, path.waypoints[nextWaypointIndex].position) <= reachedWaypointClearance)
+        if (Vector2.Distance(target.position, transform.position) <= 0.1f)
         {
-            nextWaypointIndex += 1;
+            pathIndex++;
+            
+            if(pathIndex >= GameManager.main.waypoints.Length)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            else
+            {
+                target = GameManager.main.waypoints[pathIndex];
+            }
         }
 
-        if (nextWaypointIndex >= path.waypoints.Length)
-        {
-            nextWaypointIndex = 0;
-        }
     }
-    public void MoveTowards()
+    private void FixedUpdate()
     {
-        transform.position = Vector3.MoveTowards(transform.position, path.waypoints[nextWaypointIndex].position, Time.deltaTime * speed);
+        Vector2 Direction = (target.position - transform.position).normalized;
 
-        
-    }
-
-    private void Awake()
-    {
-        path = FindAnyObjectByType<Path>();
+        rb.velocity = Direction * Speed;
     }
 }
