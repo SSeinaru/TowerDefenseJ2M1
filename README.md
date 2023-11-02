@@ -16,13 +16,13 @@ Omschrijf hier waarom jij denkt dat je in die scripts aan deze eisen voldoet.
 Bijvoorbeeld:
 
 *"In dit script heb ik een array gebruikt voor al mijn vijanden die in de nieuwe wave worden gespawnd. Hierdoor heb ik mijzelf niet hoeven herhalen **(DRY)** in de code omdat ik met 1 regel alle enemies kan plaatsen via en for each loop.
-[link naar script](/MyTowerDefenseGame/Assets/Scripts/JustAScript.cs)"*
+[link naar script](https://github.com/SSeinaru/TowerDefenseJ2M1/blob/master/TowerDefense/Assets/scripts/Tower/TurretTargetting.cs)"*
 
 ## Product 2: "Projectmappen op GitHub"
 
 Je commit de mappenstructuur van je unity project op github en verwijst vanuit je readme naar de root map van je project. Met een netjes en goed gestructureerde mappenstructuur en benamingen van files toon je aan dat je dit leerdoel beheerst. 
 
-Dit is de [ROOT](/MyTowerDefenseGame/) folder van mijn unity project.
+Dit is de [ROOT](https://github.com/SSeinaru/TowerDefenseJ2M1/tree/master/TowerDefense) folder van mijn unity project.
 
 Zorg dat deze verwijst naar je Develop branch.
 
@@ -30,7 +30,7 @@ Zorg dat deze verwijst naar je Develop branch.
 
 Je maakt in Unity een stabiele “build” van je game waarbij bugs en logs eerst zijn verwijderd. Deze buildfiles upload je in je repository onder releases.  Bij eventuele afwijkingen moeten deze worden gedocumenteerd in de release. (Bijv controller nodig of spelen via netwerk etc..) 
 
-[Release Voorbeeld](https://github.com/erwinhenraat/TowerDefenseTemplate/releases)
+[Release Voorbeeld](https://github.com/SSeinaru/TowerDefenseJ2M1/releases/tag/Towerdefense)
 
 ## Product 4: Game met Sprites(animations) en Textures 
 
