@@ -10,8 +10,9 @@ public class FollowWaypoint : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
 
     [Header("attributes")]
-    [SerializeField] private float Speed = 8f;
-    
+    [SerializeField] private float Speed = 2f;
+
+    public static int ObjectsReachedEnd = 0;
     private Transform target;
 
     private int pathIndex = 0;
@@ -30,6 +31,8 @@ public class FollowWaypoint : MonoBehaviour
             
             if(pathIndex >= GameManager.main.waypoints.Length)
             {
+                EnemySpawner.onEnemyDestroy.Invoke();
+                OnEndReached();
                 Destroy(gameObject);
                 return;
             }
@@ -45,5 +48,16 @@ public class FollowWaypoint : MonoBehaviour
         Vector2 Direction = (target.position - transform.position).normalized;
 
         rb.velocity = Direction * Speed;
+    }
+
+    public static void EnemyReachedEnd()
+    {
+        ObjectsReachedEnd++;
+        Debug.Log("Objects Destroyed: " + ObjectsReachedEnd);
+    }
+
+    void OnEndReached()
+    {
+        EnemyReachedEnd();
     }
 }

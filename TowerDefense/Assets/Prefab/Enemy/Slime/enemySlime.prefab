@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 3277860695469861979}
   - component: {fileID: 3025724956836938365}
   - component: {fileID: 2352245609160400410}
-  m_Layer: 0
+  - component: {fileID: 1723242384668669563}
+  m_Layer: 7
   m_Name: enemySlime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -153,7 +154,7 @@ Animator:
   m_GameObject: {fileID: 2352245609160400409}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 998401cab9a789449ba7ac2ce4cc9f8a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -178,3 +179,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1156798872919314320}
   Speed: 2
+--- !u!114 &1723242384668669563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2352245609160400409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ae992c01625724c807b5191348f50e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 10
+  CorpseWorth: 10

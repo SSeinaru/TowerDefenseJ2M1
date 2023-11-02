@@ -8,7 +8,7 @@ public class TowerGridPlace : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject PlaceIndicator; // The prefab used to indicate where you can place the turret.
-    [SerializeField] private GameObject Tower; // The prefab for the actual turret.
+    [SerializeField] private GameObject tower; // The prefab for the actual turret.
     private bool dragging = false; // A flag to determine if you're currently dragging the indicator.
     private Vector3 mousePosition; // The current mouse position in world coordinates.
     private GameObject placedIndicator; // A reference to the instantiated placement indicator.
@@ -40,7 +40,7 @@ public class TowerGridPlace : MonoBehaviour
             if (placedIndicator != null)
             {
                 // Instantiate the actual turret at the position of the indicator.
-                Instantiate(Tower, placedIndicator.transform.position, Quaternion.identity);
+                Instantiate(tower, placedIndicator.transform.position, Quaternion.identity);
 
                 // Destroy the placement indicator.
                 Destroy(placedIndicator);
